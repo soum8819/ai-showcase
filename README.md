@@ -1,6 +1,6 @@
 # AI Builds
 
-Four interactive pieces by Soumya (Sam) Dey, made by directing an AI agent from start to finish. I chose the ideas, the look and the details, and I checked every claim and every frame before shipping.
+Four interactive pieces I created by directing an AI agent from start to finish. I chose the ideas, the look and the details, and I checked every claim and every frame before shipping.
 
 **Live site:** https://soum8819.github.io/ai-showcase/
 
