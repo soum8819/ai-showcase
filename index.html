@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sam Dey · AI Builds</title>
+<meta name="description" content="Four interactive builds made by directing an AI agent: a GPT-2 explainer driven by the real model's outputs, a neon-rooftop shooter, a 3D GPU-cluster flythrough and an AI agent attack lab.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sam Dey · AI Builds">
+<meta property="og:description" content="An explainer animated from GPT-2's real outputs, a browser FPS built entirely in code, a 3D AI factory and an AI agent attack lab.">
+<meta property="og:url" content="https://soum8819.github.io/ai-showcase/">
+<meta property="og:image" content="https://soum8819.github.io/ai-showcase/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+/* Layout: short intro, then a two-column grid of project cards that stacks on phones. Single dark look by choice, to match the work. */
+:root{
+  color-scheme:dark;
+  --bg:#08090e;
+  --card:#10121a;
+  --line:#232838;
+  --fg:#eef0f6;
+  --muted:#9097ab;
+  --accent:#ffb547;
+  --cyan:#5ef2ff;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--body);-webkit-font-smoothing:antialiased;
+  padding-top:max(40px,env(safe-area-inset-top,0px));padding-bottom:max(40px,env(safe-area-inset-bottom,0px));
+  padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+header{display:flex;flex-direction:column;gap:14px;max-width:62ch}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+h1{margin:0;font:800 clamp(40px,7vw,76px)/.95 var(--display);letter-spacing:-.025em;text-wrap:balance}
+.lede{margin:0;color:#c8ccd9;font-size:18px}
+.how{margin:0;color:var(--muted);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+@media(max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:border-color .2s,transform .2s}
+.card:hover{border-color:#3a4260;transform:translateY(-2px)}
+.shot{position:relative;aspect-ratio:16/9;max-width:100%;background:#000}
+.shot img{display:block;width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:12px;top:12px;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border-radius:6px;background:rgba(8,9,14,.82);color:var(--accent);border:1px solid rgba(255,181,71,.45)}
+.body{display:flex;flex-direction:column;gap:10px;padding:18px 20px 20px;flex:1}
+.body h2{margin:0;font:800 26px/1.05 var(--display);letter-spacing:-.01em}
+.body p{margin:0;color:#c3c7d4;font-size:15px}
+.meta{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:6px 14px;font:400 12px/1.4 var(--mono);color:var(--muted)}
+.open{font:500 13px/1 var(--mono);color:var(--cyan);margin-top:4px}
+footer{border-top:1px solid var(--line);padding-top:22px;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:13px;max-width:90ch}
+footer p{margin:0}
+@media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Soumya (Sam) Dey · Solutions Architect</span>
+    <h1>Four AI builds, one day</h1>
+    <p class="lede">An explainer driven by a real language model, a browser shooter, a 3D AI factory and an agent security lab.</p>
+    <p class="how">I made each one by directing an AI agent from start to finish: choosing the idea, the look and the details, and checking every claim and every frame before it shipped.</p>
+  </header>
+
+  <main class="grid">
+    <a class="card" href="inside-gpt2/">
+      <div class="shot"><img src="assets/inside-gpt2.jpg" alt="Attention arcs connecting the words Monday, Tuesday and Wednesday, with weights of 64 and 32 percent" width="1200" height="675"><span class="badge">Real model data</span></div>
+      <div class="body">
+        <h2>Inside GPT-2</h2>
+        <p>A scrubbable, code-rendered explainer of how a language model picks its next word. Tokens, attention across all 144 heads, the best guess after each layer and the final probabilities all come from running GPT-2 small, checked against the official model export.</p>
+        <div class="meta"><span>Canvas · 7 chapters</span><span>Type your own sentence</span></div>
+        <span class="open">Open the explainer →</span>
+      </div>
+    </a>
+    <a class="card" href="neon-downpour/">
+      <div class="shot"><img src="assets/neon-downpour.jpg" alt="First-person view of a rain-soaked rooftop at night with a neon noodle sign and hovering drones" width="1200" height="675"></div>
+      <div class="body">
+        <h2>Neon Downpour</h2>
+        <p>A first-person shooter on a rain-soaked neon rooftop. Five waves of hunter drones. The city, textures, rifle, drones, lighting and sound are all generated in code.</p>
+        <div class="meta"><span>three.js · WebGL</span><span>Desktop, mouse and keyboard</span></div>
+        <span class="open">Play →</span>
+      </div>
+    </a>
+    <a class="card" href="ai-factory/">
+      <div class="shot"><img src="assets/ai-factory.jpg" alt="A glowing core surrounded by orbit rings inside a GPU data center" width="1200" height="675"></div>
+      <div class="body">
+        <h2>AI Factory</h2>
+        <p>A cinematic 3D flythrough of a GPU cluster under an aurora sky. Then it hands you the camera: orbit, zoom and tap any rack to inspect it.</p>
+        <div class="meta"><span>three.js · custom shaders</span><span>Works on phones</span></div>
+        <span class="open">Fly through →</span>
+      </div>
+    </a>
+    <a class="card" href="agent-attack-lab/">
+      <div class="shot"><img src="assets/agent-attack-lab.jpg" alt="Isometric diagram of an AI agent between an attacker, a web page and internal tools, with guardrail controls" width="1200" height="675"></div>
+      <div class="body">
+        <h2>Agent Attack Lab</h2>
+        <p>Launch four OWASP-mapped attacks at a tool-using AI agent and switch guardrails on and off to see what gets through. Built on a hand-written isometric renderer.</p>
+        <div class="meta"><span>Canvas · OWASP LLM Top 10 (2025)</span><span>Works on phones</span></div>
+        <span class="open">Run an attack →</span>
+      </div>
+    </a>
+  </main>
+
+  <footer>
+    <p>Inside GPT-2 shows content created with GPT-2 small (OpenAI, modified MIT license). It uses gpt-tokenizer (MIT) for your own sentences. The 3D pieces use three.js (MIT). Fonts come from Google Fonts.</p>
+    <p>Source: <a href="https://github.com/soum8819/ai-showcase">github.com/soum8819/ai-showcase</a></p>
+  </footer>
+</div>
+</body>
+</html>
